@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,5 +31,12 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition((currentPos + inputVector));
 
         playerAnimation.SetDirection(new Vector2(moveH, moveV));
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.transform.name == "Treasure")
+        {
+            SceneManager.LoadScene("Clear");
+        }
     }
 }
