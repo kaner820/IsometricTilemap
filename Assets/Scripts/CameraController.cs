@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float smoothSpeed = 2;
+    public float smoothSpeed = 2; //commit용 주석
 
     private Transform target;
     void Start()
